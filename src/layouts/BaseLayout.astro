@@ -1,0 +1,149 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/workshops', label: 'Workshops' },
+  { href: '/legacy-programs', label: 'Legacy Programs' },
+  { href: '/clients', label: 'Clients' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bombay Academy of Management Studies - Corporate Mind Management & Human Performance Training since 1986" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title} | Bombay Academy of Management Studies</title>
+  </head>
+  <body class="font-sans text-navy bg-white min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-3 shrink-0">
+            <img
+              src="https://ik.imagekit.io/violetviolinist/bams/logo.png"
+              alt="BAMS Logo"
+              class="h-12 lg:h-16 w-auto"
+            />
+            <div class="hidden sm:block">
+              <div class="text-sm font-semibold leading-tight">Bombay Academy of</div>
+              <div class="text-sm font-semibold leading-tight">Management Studies</div>
+            </div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <div class="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class={`text-sm font-medium transition-colors hover:text-gold ${currentPath === link.href ? 'text-gold' : 'text-white/90'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 rounded-md hover:bg-navy-light transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="lg:hidden hidden pb-4">
+          <div class="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-navy-light ${currentPath === link.href ? 'text-gold bg-navy-light' : 'text-white/90'}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Brand -->
+          <div>
+            <img
+              src="https://ik.imagekit.io/violetviolinist/bams/logo.png"
+              alt="BAMS Logo"
+              class="h-16 w-auto mb-4"
+            />
+            <p class="text-sm text-white/60">
+              Corporate Mind Management & Human Performance Training
+            </p>
+            <p class="text-sm text-gold mt-2 font-medium">Established 1986</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <div class="flex flex-col gap-2">
+              {navLinks.slice(0, 5).map((link) => (
+                <a href={link.href} class="text-sm hover:text-gold transition-colors">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Get in Touch</h3>
+            <div class="flex flex-col gap-2 text-sm">
+              <a href="#" class="hover:text-gold transition-colors">Email</a>
+              <a href="#" class="hover:text-gold transition-colors">WhatsApp</a>
+              <a href="#" class="hover:text-gold transition-colors">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/40">
+          <p>&copy; {new Date().getFullYear()} Bombay Academy of Management Studies. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

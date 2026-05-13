@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ComingSoon from '../components/ComingSoon.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Insights">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Insights</h1>
+      <p class="text-xl text-white/70 max-w-2xl mx-auto">
+        Perspectives on workplace stress, mind management, and human performance.
+      </p>
+    </div>
+  </section>
+
+  <ComingSoon
+    title="Insights Coming Soon"
+    message="We're preparing articles on workplace stress management, emotional resilience, focus strategies, and mind mastery for corporate professionals."
+  />
+</BaseLayout>

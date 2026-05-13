@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+
+const clients = [
+  { name: 'Siemens Ltd', sector: 'Engineering & Technology' },
+  { name: 'Pidilite Industries', sector: 'Manufacturing' },
+  { name: 'Indian Oil Corporation Ltd (IOCL)', sector: 'Oil & Gas' },
+  { name: 'Bharat Petroleum Corporation Ltd (BPCL)', sector: 'Oil & Gas' },
+  { name: 'BEST, Mumbai', sector: 'Public Transport' },
+  { name: 'BGR Energy Systems Ltd', sector: 'Energy' },
+  { name: 'Doosan Infracore India Ltd', sector: 'Infrastructure' },
+  { name: 'Coromandel Engineering Co. Ltd', sector: 'Engineering' },
+  { name: 'Nagarjuna Oil Corporation, Chennai', sector: 'Oil & Gas' },
+  { name: 'Express Publications Ltd', sector: 'Media & Publishing' },
+];
+---
+
+<BaseLayout title="Our Clients">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Clients</h1>
+      <p class="text-xl text-white/70 max-w-2xl mx-auto">
+        Trusted by India's leading corporations for management training excellence.
+      </p>
+    </div>
+  </section>
+
+  <!-- Clients Grid -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-navy/70 mb-12 text-center">
+          Over the past three decades, BAMS has delivered specialised corporate training programs
+          to professionals from these distinguished organisations.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {clients.map((client) => (
+            <div class="bg-white border border-navy/10 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <h3 class="text-lg font-semibold text-navy">{client.name}</h3>
+              <p class="text-sm text-navy/50 mt-1">{client.sector}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-16 text-center">
+          <p class="text-navy/50 text-sm">
+            And many more organisations across manufacturing, engineering, finance, and public sector domains.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

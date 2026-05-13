@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+
+const programs = {
+  'Export & Import': [
+    'Export-Import Documentation and Procedure',
+    'Export Promotion Schemes and Incentives',
+    'Quick Realization of Export Proceeds',
+    'International Marketing',
+    'Developing Negotiation Skills for Export and Import',
+    'Letter of Credit Mechanism',
+    'Import Documentation and Procedure',
+    'International Standard Banking Practice (ISBP)',
+    'New Foreign Trade Policy',
+  ],
+  'Finance & Risk': [
+    'Effective Management of Working Capital and Debt',
+    'Foreign Exchange and Risk Management',
+    'Balance Sheet Analysis',
+    'Effective Management of Credit and Overdue Outstandings',
+    'Works Contract, VAT and CST',
+    'Documentation and Procedure for Central Excise & Service Tax',
+  ],
+  'Purchase & Supply Chain': [
+    'Challenges in Purchase Management',
+    'Legal Aspects of Purchasing & Contract Management',
+    'Developing Negotiation Skills for Purchasing',
+    'Effective Management of Inventory and Stores',
+  ],
+  'Sales & Marketing': [
+    'Effective Management of Sales and Exports',
+    'Strategic Selling and Negotiation Skills',
+    'Excellence in Negotiation',
+  ],
+  'Soft Skills': [
+    'Business Etiquette for Success',
+  ],
+};
+---
+
+<BaseLayout title="Legacy Programs">
+  <!-- Page Header -->
+  <section class="bg-navy text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Legacy Training Portfolio</h1>
+      <p class="text-xl text-white/70 max-w-2xl mx-auto">
+        Over three decades of management training programs delivered to India's leading corporates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs List -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg text-navy/70 mb-12">
+          Since 1986, BAMS has designed and delivered specialised management training programs at premium venues
+          across India. Below is a selection from our comprehensive training portfolio, representing our institutional
+          depth and expertise across multiple business domains.
+        </p>
+
+        <div class="space-y-12">
+          {Object.entries(programs).map(([category, items]) => (
+            <div>
+              <h2 class="text-xl font-bold text-navy mb-4 flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-gold shrink-0"></span>
+                {category}
+              </h2>
+              <div class="bg-cream rounded-lg p-6">
+                <ul class="space-y-3">
+                  {items.map((item) => (
+                    <li class="flex items-start gap-3 text-navy/70">
+                      <span class="w-1.5 h-1.5 rounded-full bg-teal mt-2.5 shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-16 p-8 bg-navy/5 rounded-lg text-center">
+          <p class="text-navy/70 text-lg">
+            These programs represent BAMS's deep institutional knowledge across management disciplines.
+            Our current focus has evolved to <strong class="text-navy">Corporate Mind Management & Wellness</strong>,
+            carrying forward the same rigour and practical approach.
+          </p>
+          <a href="/workshops" class="inline-block mt-6 text-teal font-medium hover:text-teal-light transition-colors">
+            View Current Workshops &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
