@@ -30,7 +30,14 @@ const currentPath = Astro.url.pathname;
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | Bombay Academy of Management Studies</title>
   </head>
-  <body class="font-sans text-navy bg-white min-h-screen flex flex-col">
+  <body class="font-sans text-navy bg-white min-h-screen flex flex-col">{currentPath === '/' && <Fragment set:html={`<!--
+THESIS: Pressure → Practice → Performance turns four workshops into one visible transformation and refuses a history-first hero or interchangeable card grid.
+OWN-WORLD: Executive navy and warm ivory fields; teal marks current practice; gold marks legacy and action; Inter, ruled ledgers, modest curves, restrained depth, and one resolving line motif.
+STORY: HR and L&D buyers understand the pressure addressed, compare four practices, verify format, credibility, and investment, then book a corporate discussion.
+FIRST VIEWPORT: A large direct offer and gold action occupy the left; an animated pressure-to-performance map with four steady outcomes occupies the right.
+FORM: Pressure → Practice → Performance journey, fourth grounded surface structure; seed c62afaa5.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`} />}
     <!-- Navigation -->
     <header class="bg-navy text-white sticky top-0 z-50 shadow-lg">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,6 +72,8 @@ const currentPath = Astro.url.pathname;
             id="mobile-menu-btn"
             class="lg:hidden p-2 rounded-md hover:bg-navy-light transition-colors"
             aria-label="Toggle menu"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -139,10 +148,21 @@ const currentPath = Astro.url.pathname;
       </div>
     </footer>
 
-    <!-- Mobile menu toggle script -->
     <script>
-      document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-        document.getElementById('mobile-menu')?.classList.toggle('hidden');
+      const menuButton = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        menuButton.setAttribute('aria-expanded', String(!mobileMenu?.classList.contains('hidden')));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+          mobileMenu?.classList.add('hidden');
+          menuButton?.setAttribute('aria-expanded', 'false');
+          menuButton?.focus();
+        }
       });
     </script>
   </body>

@@ -2,167 +2,896 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
 
+const programs = [
+  {
+    name: 'Mind Mastery for Peak Performance',
+    duration: 'Full day',
+    outcome: 'Build attention control, emotional regulation, and clarity under pressure.',
+  },
+  {
+    name: 'Stress Management & Nervous System Reset',
+    duration: 'Full day',
+    outcome: 'Use breathwork, meditation, and somatic techniques to reduce workplace stress.',
+  },
+  {
+    name: 'Time Management & Mental Focus',
+    duration: 'Full day',
+    outcome: 'Strengthen prioritisation, deep focus, and cognitive endurance in distracting environments.',
+  },
+  {
+    name: 'Meditation for Corporate Wellness',
+    duration: '2 hours',
+    outcome: 'Introduce practical, non-religious meditation techniques adapted for corporate teams.',
+  },
+];
+
 const clients = [
   'Siemens Ltd',
   'Pidilite Industries',
-  'IOCL',
-  'BPCL',
-  'BEST, Mumbai',
+  'Indian Oil Corporation',
+  'Bharat Petroleum',
+  'BEST Mumbai',
   'BGR Energy Systems',
   'Doosan Infracore India',
   'Coromandel Engineering',
 ];
 ---
 
-<BaseLayout title="Home">
-  <!-- Hero Section -->
-  <section class="relative bg-navy text-white py-20 lg:py-32">
-    <div class="absolute inset-0 bg-gradient-to-br from-navy-dark to-navy opacity-90"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-gold font-medium text-sm uppercase tracking-wider mb-4">Established 1986</p>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-        Transforming Minds at Work<br class="hidden md:block" /> Since 1986
-      </h1>
-      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-4">
-        Corporate Mind Management & Human Performance Training
-      </p>
-      <p class="text-base text-white/60 max-w-2xl mx-auto mb-10">
-        Stress Management &bull; Mind Mastery &bull; Emotional Resilience &bull; Meditation-Based Wellness Programs
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="inline-block bg-gold hover:bg-gold-light text-navy font-semibold px-8 py-3 rounded-md transition-colors">
-          Book a Corporate Discussion
-        </a>
-        <a href="/workshops" class="inline-block border border-white/30 hover:border-white text-white font-semibold px-8 py-3 rounded-md transition-colors">
-          Explore Workshops
-        </a>
-      </div>
-    </div>
-  </section>
+<BaseLayout title="Corporate Mind Management Workshops">
+  <div class="home-page">
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="hero-grid max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="hero-copy">
+          <h1 id="hero-title">Move teams from pressure to practiced performance.</h1>
+          <p class="hero-intro">
+            BAMS brings management-training rigour to stress, attention, and emotional resilience through practical onsite workshops for corporate teams.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact" class="primary-action">Book a Corporate Discussion</a>
+            <a href="#programs" class="secondary-action">
+              See the four programs
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+          <p class="hero-context">Onsite across India <span aria-hidden="true">•</span> Designed for groups of 10–20</p>
+        </div>
 
-  <!-- Legacy Section -->
-  <section class="py-20 bg-cream">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">A Legacy of Excellence</h2>
-        <p class="text-lg text-navy/70 mb-8">
-          Founded in 1986 by Shri R. K. Rawat (MBA, IIM Calcutta), Bombay Academy of Management Studies
-          has trained professionals across India's leading corporations in management, finance, international trade,
-          and leadership skills.
-        </p>
-        <p class="text-lg text-navy/70 mb-8">
-          Today, BAMS evolves to address the modern workplace's greatest challenge &mdash;
-          the human mind. Our programs integrate management science with evidence-based stress management,
-          breathwork, and mind mastery techniques to build resilient, high-performing teams.
-        </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-teal">38+</div>
-            <div class="text-sm text-navy/60 mt-1">Years of Experience</div>
+        <div class="journey-board" aria-label="Pressure transforms through practice into performance">
+          <div class="journey-stage-labels" aria-hidden="true">
+            <span>Pressure</span>
+            <span>Practice</span>
+            <span>Performance</span>
           </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-teal">25+</div>
-            <div class="text-sm text-navy/60 mt-1">Training Programs</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-teal">10+</div>
-            <div class="text-sm text-navy/60 mt-1">Major Corporates</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-teal">IIM</div>
-            <div class="text-sm text-navy/60 mt-1">Faculty Pedigree</div>
+
+          <svg class="journey-map" viewBox="0 0 720 270" role="img" aria-labelledby="journey-title journey-description">
+            <title id="journey-title">Pressure to performance</title>
+            <desc id="journey-description">Four unsettled lines pass through practical training and become four steady paths.</desc>
+            <g class="pressure-lines">
+              <path pathLength="1" d="M20 48C82 5 108 108 180 61S262 48 306 70" />
+              <path pathLength="1" d="M20 101C75 148 119 53 181 112S256 88 306 111" />
+              <path pathLength="1" d="M20 166C83 109 117 214 182 154S260 184 306 153" />
+              <path pathLength="1" d="M20 222C72 260 126 167 185 226S257 202 306 201" />
+            </g>
+            <path class="practice-axis" d="M340 25V245" />
+            <g class="performance-lines">
+              <path pathLength="1" d="M340 70H700" />
+              <path pathLength="1" d="M340 111H700" />
+              <path pathLength="1" d="M340 153H700" />
+              <path pathLength="1" d="M340 201H700" />
+            </g>
+            <g class="practice-nodes">
+              <circle cx="340" cy="70" r="6" />
+              <circle cx="340" cy="111" r="6" />
+              <circle cx="340" cy="153" r="6" />
+              <circle cx="340" cy="201" r="6" />
+            </g>
+          </svg>
+
+          <div class="journey-key">
+            <span>Attention</span>
+            <span>Resilience</span>
+            <span>Focus</span>
+            <span>Composure</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Current Workshops -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Current Workshop Offerings</h2>
-        <p class="text-lg text-navy/60 max-w-2xl mx-auto">
-          Evidence-based programs designed for corporate teams seeking peak performance and emotional resilience.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Workshop 1 -->
-        <div class="bg-white border border-navy/10 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-navy mb-3">Mind Mastery for Peak Performance</h3>
-          <p class="text-navy/60 mb-4">Attention management, emotional regulation, clarity under pressure, and thought pattern optimization.</p>
-          <a href="/workshops" class="text-teal font-medium text-sm hover:text-teal-light transition-colors">Learn more &rarr;</a>
+    <section id="programs" class="programs-section" aria-labelledby="programs-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 programs-grid">
+        <div class="programs-intro">
+          <h2 id="programs-title">Four practices. One stronger way of working.</h2>
+          <p>
+            Choose the pressure point your team needs to address. Every program is practical, experiential, and built for the realities of corporate work.
+          </p>
+          <a href="/workshops" class="text-link">
+            Compare all workshop details
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
         </div>
 
-        <!-- Workshop 2 -->
-        <div class="bg-white border border-navy/10 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-navy mb-3">Stress Management & Nervous System Reset</h3>
-          <p class="text-navy/60 mb-4">Breathwork, meditation, somatic relaxation, and burnout prevention for high-pressure teams.</p>
-          <a href="/workshops" class="text-teal font-medium text-sm hover:text-teal-light transition-colors">Learn more &rarr;</a>
-        </div>
-
-        <!-- Workshop 3 -->
-        <div class="bg-white border border-navy/10 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-navy mb-3">Time Management & Mental Focus</h3>
-          <p class="text-navy/60 mb-4">Strategies for sustained attention, prioritization, and deep work in distraction-heavy environments.</p>
-          <a href="/workshops" class="text-teal font-medium text-sm hover:text-teal-light transition-colors">Learn more &rarr;</a>
-        </div>
-
-        <!-- Workshop 4 -->
-        <div class="bg-white border border-navy/10 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="w-10 h-10 rounded-full bg-teal/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-navy mb-3">Meditation for Corporate Wellness</h3>
-          <p class="text-navy/60 mb-4">A 2-hour experiential session introducing practical meditation techniques for the workplace.</p>
-          <a href="/workshops" class="text-teal font-medium text-sm hover:text-teal-light transition-colors">Learn more &rarr;</a>
+        <div class="program-list">
+          {programs.map((program) => (
+            <article class="program-row">
+              <div class="program-row-heading">
+                <h3>{program.name}</h3>
+                <span>{program.duration}</span>
+              </div>
+              <p>{program.outcome}</p>
+              <a href="/workshops" aria-label={`View details for ${program.name}`}>
+                View program
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Client Strip -->
-  <section class="py-16 bg-navy/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-sm font-medium text-navy/50 uppercase tracking-wider mb-8">Trusted by Leading Corporates</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {clients.map((client) => (
-          <div class="text-center py-4 px-6 bg-white rounded-md shadow-sm">
-            <span class="text-sm font-medium text-navy/70">{client}</span>
+    <section class="format-section" aria-labelledby="format-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 format-grid">
+        <div class="format-copy">
+          <h2 id="format-title">Built for the room where performance happens.</h2>
+          <p>
+            BAMS workshops bring practical mind-management tools into your organisation, so participants can connect each technique to the pressures they already face at work.
+          </p>
+        </div>
+
+        <dl class="format-ledger">
+          <div>
+            <dt>Core format</dt>
+            <dd>Full-day onsite workshop</dd>
           </div>
-        ))}
+          <div>
+            <dt>Entry format</dt>
+            <dd>Two-hour experiential meditation session</dd>
+          </div>
+          <div>
+            <dt>Group size</dt>
+            <dd>10–20 participants</dd>
+          </div>
+          <div>
+            <dt>Delivery</dt>
+            <dd>Your premises or a venue of your choice</dd>
+          </div>
+        </dl>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 bg-teal text-white text-center">
-    <div class="max-w-3xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Team?</h2>
-      <p class="text-white/80 text-lg mb-8">
-        Let's discuss how our corporate mind management programs can benefit your organisation.
-      </p>
-      <a href="/contact" class="inline-block bg-white text-teal font-semibold px-8 py-3 rounded-md hover:bg-cream transition-colors">
-        Get in Touch
-      </a>
-    </div>
-  </section>
+    <section class="proof-section" aria-labelledby="proof-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="proof-heading">
+          <div class="proof-year" aria-label="Established in 1986">
+            <span>Since</span>
+            <strong>1986</strong>
+          </div>
+          <div>
+            <h2 id="proof-title">Built in management. Evolved for the mind.</h2>
+            <p>
+              BAMS carries nearly four decades of corporate training experience into today's challenge: helping people stay clear, resilient, and effective under pressure.
+            </p>
+          </div>
+        </div>
+
+        <div class="leadership-ledger">
+          <article>
+            <h3>Shri R. K. Rawat</h3>
+            <p class="credentials">B.Com, MBA — IIM Calcutta</p>
+            <p>Founded BAMS with a practical, experience-led approach to management training for Indian corporates.</p>
+          </article>
+          <article>
+            <h3>Archana Rawat</h3>
+            <p class="credentials">B.E. — NIT Nagpur, MBA — IIM Ahmedabad</p>
+            <p>Leads BAMS into corporate mind management, combining management expertise with the study of human psychology.</p>
+          </article>
+        </div>
+
+        <div class="client-ledger" aria-labelledby="clients-title">
+          <h3 id="clients-title">Organisations trained by BAMS</h3>
+          <div>
+            {clients.map((client) => <span>{client}</span>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="investment-section" aria-labelledby="investment-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 investment-grid">
+        <div>
+          <h2 id="investment-title">A clear starting point for planning.</h2>
+          <p>Custom programs are available when your team needs a more specific emphasis.</p>
+        </div>
+        <div class="investment-figure">
+          <p class="price"><span>₹</span>50,000</p>
+          <p>Full-day onsite workshop for up to 10 participants</p>
+          <p class="additional"><strong>₹5,000</strong> per additional participant, up to 20</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="closing-title">Start with the pressure your team feels now.</h2>
+        <p>We’ll help you choose the workshop that turns it into a practical capability.</p>
+        <a href="/contact" class="closing-action">Book a Corporate Discussion</a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  .home-page {
+    --page-navy: #0a1f3f;
+    --page-navy-light: #132d54;
+    --page-navy-dark: #06142a;
+    --page-teal: #2a7f7f;
+    --page-teal-light: #3a9e9e;
+    --page-gold: #c5a55a;
+    --page-gold-light: #d4ba7a;
+    --page-cream: #f8f6f0;
+    color: var(--page-navy);
+  }
+
+  .home-page a:focus-visible {
+    outline: 3px solid var(--page-gold);
+    outline-offset: 4px;
+  }
+
+  .programs-section a:focus-visible {
+    outline-color: var(--page-navy);
+  }
+
+  .closing-section a:focus-visible {
+    outline-color: white;
+  }
+
+  .home-hero {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--page-navy-dark);
+    color: white;
+  }
+
+  .hero-grid {
+    display: grid;
+    min-height: min(780px, calc(100svh - 80px));
+    align-items: center;
+    gap: 64px;
+    padding-block: 80px;
+  }
+
+  .hero-copy {
+    max-width: 650px;
+  }
+
+  .hero-copy h1 {
+    max-width: 12ch;
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 5.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .hero-intro {
+    max-width: 62ch;
+    margin: 28px 0 0;
+    color: rgb(255 255 255 / 76%);
+    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 24px;
+    margin-top: 36px;
+  }
+
+  .primary-action,
+  .closing-action {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: var(--page-gold);
+    color: var(--page-navy-dark);
+    padding: 12px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .primary-action:hover,
+  .closing-action:hover {
+    background: var(--page-gold-light);
+  }
+
+  .secondary-action,
+  .text-link,
+  .program-row > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .secondary-action {
+    color: white;
+  }
+
+  .secondary-action svg,
+  .text-link svg,
+  .program-row > a svg {
+    width: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  .hero-context {
+    margin: 22px 0 0;
+    color: rgb(255 255 255 / 58%);
+    font-size: 0.875rem;
+  }
+
+  .hero-context span {
+    margin-inline: 8px;
+    color: var(--page-gold);
+  }
+
+  .journey-board {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 16%);
+    border-radius: 8px;
+    background: rgb(10 31 63 / 86%);
+    box-shadow: 0 24px 60px rgb(0 0 0 / 22%);
+    padding: 24px;
+  }
+
+  .journey-stage-labels {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 1fr;
+    color: rgb(255 255 255 / 55%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .journey-stage-labels span:nth-child(2) {
+    color: var(--page-gold);
+    text-align: center;
+  }
+
+  .journey-stage-labels span:last-child {
+    text-align: right;
+  }
+
+  .journey-map {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .pressure-lines,
+  .performance-lines {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 2;
+  }
+
+  .pressure-lines {
+    stroke: rgb(255 255 255 / 25%);
+  }
+
+  .performance-lines {
+    stroke: var(--page-teal-light);
+  }
+
+  .practice-axis {
+    fill: none;
+    stroke: var(--page-gold);
+    stroke-width: 3;
+  }
+
+  .practice-nodes {
+    fill: var(--page-gold);
+    stroke: var(--page-navy-dark);
+    stroke-width: 3;
+  }
+
+  .journey-key {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+    padding-top: 18px;
+    color: rgb(255 255 255 / 72%);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .programs-section {
+    position: relative;
+    background: var(--page-cream);
+    padding-block: 112px;
+  }
+
+  .programs-grid {
+    display: grid;
+    gap: 64px;
+  }
+
+  .programs-intro h2,
+  .format-copy h2,
+  .proof-heading h2,
+  .investment-section h2,
+  .closing-section h2 {
+    margin: 0;
+    font-size: clamp(2.35rem, 5vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .programs-intro p,
+  .format-copy p,
+  .proof-heading p,
+  .investment-section > div > div:first-child p,
+  .closing-section p {
+    max-width: 60ch;
+    margin: 24px 0 0;
+    color: rgb(10 31 63 / 70%);
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  .text-link {
+    margin-top: 28px;
+    color: var(--page-navy);
+  }
+
+  .text-link:hover,
+  .program-row > a:hover {
+    color: var(--page-navy-light);
+  }
+
+  .program-list {
+    border-bottom: 1px solid rgb(10 31 63 / 16%);
+  }
+
+  .program-row {
+    border-top: 1px solid rgb(10 31 63 / 16%);
+    padding-block: 28px;
+  }
+
+  .program-row-heading {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .program-row h3 {
+    max-width: 28ch;
+    margin: 0;
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .program-row-heading span {
+    flex: 0 0 auto;
+    border-radius: 9999px;
+    background: rgb(42 127 127 / 10%);
+    color: var(--page-navy);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .program-row p {
+    max-width: 62ch;
+    margin: 14px 0 18px;
+    color: rgb(10 31 63 / 68%);
+    line-height: 1.6;
+  }
+
+  .program-row > a {
+    color: var(--page-navy);
+    font-size: 0.875rem;
+  }
+
+  .format-section {
+    background: white;
+    padding-block: 112px;
+  }
+
+  .format-grid {
+    display: grid;
+    gap: 64px;
+  }
+
+  .format-ledger {
+    margin: 0;
+    border-top: 2px solid var(--page-navy);
+  }
+
+  .format-ledger > div {
+    display: grid;
+    gap: 8px;
+    border-bottom: 1px solid rgb(10 31 63 / 16%);
+    padding-block: 22px;
+  }
+
+  .format-ledger dt {
+    color: var(--page-teal);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .format-ledger dd {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .proof-section {
+    background: var(--page-navy);
+    color: white;
+    padding-block: 112px;
+  }
+
+  .proof-heading {
+    display: grid;
+    align-items: end;
+    gap: 40px;
+  }
+
+  .proof-year span {
+    display: block;
+    color: var(--page-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .proof-year strong {
+    display: block;
+    margin-top: 4px;
+    color: white;
+    font-size: clamp(4.5rem, 12vw, 9rem);
+    letter-spacing: -0.06em;
+    line-height: 0.8;
+  }
+
+  .proof-heading h2 {
+    max-width: 12ch;
+  }
+
+  .proof-heading p {
+    color: rgb(255 255 255 / 70%);
+  }
+
+  .leadership-ledger {
+    display: grid;
+    margin-top: 80px;
+    border-block: 1px solid rgb(255 255 255 / 18%);
+  }
+
+  .leadership-ledger article {
+    padding-block: 32px;
+  }
+
+  .leadership-ledger article + article {
+    border-top: 1px solid rgb(255 255 255 / 18%);
+  }
+
+  .leadership-ledger h3,
+  .client-ledger h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .leadership-ledger .credentials {
+    margin: 8px 0 0;
+    color: var(--page-gold);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .leadership-ledger article > p:last-child {
+    max-width: 62ch;
+    margin: 18px 0 0;
+    color: rgb(255 255 255 / 66%);
+    line-height: 1.65;
+  }
+
+  .client-ledger {
+    margin-top: 72px;
+  }
+
+  .client-ledger h3 {
+    color: rgb(255 255 255 / 65%);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .client-ledger > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+    border-top: 1px solid rgb(255 255 255 / 18%);
+  }
+
+  .client-ledger span {
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    border-bottom: 1px solid rgb(255 255 255 / 18%);
+    color: rgb(255 255 255 / 78%);
+    font-weight: 600;
+  }
+
+  .client-ledger span:nth-child(odd) {
+    padding-right: 16px;
+  }
+
+  .client-ledger span:nth-child(even) {
+    border-left: 1px solid rgb(255 255 255 / 18%);
+    padding-left: 16px;
+  }
+
+  .investment-section {
+    background: var(--page-cream);
+    padding-block: 112px;
+  }
+
+  .investment-grid {
+    display: grid;
+    gap: 64px;
+  }
+
+  .investment-section h2 {
+    max-width: 11ch;
+  }
+
+  .investment-figure {
+    align-self: end;
+    border-top: 2px solid var(--page-navy);
+    padding-top: 24px;
+  }
+
+  .investment-figure .price {
+    margin: 0;
+    color: var(--page-navy);
+    font-size: clamp(4rem, 9vw, 7rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+  }
+
+  .investment-figure .price span {
+    color: var(--page-teal);
+    font-size: 0.5em;
+    vertical-align: top;
+  }
+
+  .investment-figure > p:nth-child(2) {
+    margin: 24px 0 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  .investment-figure .additional {
+    margin: 18px 0 0;
+    border-top: 1px solid rgb(10 31 63 / 16%);
+    padding-top: 18px;
+    color: rgb(10 31 63 / 65%);
+  }
+
+  .investment-figure .additional strong {
+    color: var(--page-navy);
+  }
+
+  .closing-section {
+    background: var(--page-teal);
+    color: white;
+    padding-block: 112px;
+    text-align: center;
+  }
+
+  .closing-section h2 {
+    max-width: 15ch;
+    margin-inline: auto;
+  }
+
+  .closing-section p {
+    max-width: 50ch;
+    margin-inline: auto;
+    color: white;
+  }
+
+  .closing-action {
+    margin-top: 32px;
+    background: white;
+    color: var(--page-teal);
+  }
+
+  .closing-action:hover {
+    background: var(--page-cream);
+  }
+
+  @media (min-width: 768px) {
+    .format-ledger > div {
+      grid-template-columns: 0.75fr 1.25fr;
+      align-items: baseline;
+      gap: 32px;
+    }
+
+    .proof-heading {
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 64px;
+    }
+
+    .leadership-ledger {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .leadership-ledger article {
+      padding: 40px;
+    }
+
+    .leadership-ledger article:first-child {
+      padding-left: 0;
+    }
+
+    .leadership-ledger article + article {
+      border-top: 0;
+      border-left: 1px solid rgb(255 255 255 / 18%);
+      padding-right: 0;
+    }
+
+    .client-ledger > div {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .client-ledger span,
+    .client-ledger span:nth-child(odd),
+    .client-ledger span:nth-child(even) {
+      border-left: 1px solid rgb(255 255 255 / 18%);
+      padding-inline: 18px;
+    }
+
+    .client-ledger span:nth-child(4n + 1) {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 72px;
+    }
+
+    .programs-grid {
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 96px;
+    }
+
+    .programs-intro {
+      position: sticky;
+      top: 112px;
+      align-self: start;
+    }
+
+    .format-grid,
+    .investment-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+      gap: 112px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-grid {
+      min-height: auto;
+      gap: 56px;
+      padding-block: 64px;
+    }
+
+    .hero-copy h1 {
+      max-width: 13ch;
+    }
+
+    .hero-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .primary-action,
+    .secondary-action {
+      justify-content: center;
+    }
+
+    .journey-board {
+      margin-inline: -4px;
+      padding: 18px 14px;
+    }
+
+    .journey-stage-labels {
+      font-size: 0.65rem;
+    }
+
+    .journey-key {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 10px;
+    }
+
+    .programs-section,
+    .format-section,
+    .proof-section,
+    .investment-section,
+    .closing-section {
+      padding-block: 80px;
+    }
+
+    .program-row-heading {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .proof-year strong {
+      font-size: 5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .performance-lines path {
+      stroke-dasharray: 1;
+      animation: resolve-path 1700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .performance-lines path:nth-child(2) {
+      animation-delay: 120ms;
+    }
+
+    .performance-lines path:nth-child(3) {
+      animation-delay: 240ms;
+    }
+
+    .performance-lines path:nth-child(4) {
+      animation-delay: 360ms;
+    }
+
+    @keyframes resolve-path {
+      from {
+        stroke-dashoffset: 0.72;
+        opacity: 0.38;
+        filter: blur(2px);
+      }
+      to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }
+</style>
